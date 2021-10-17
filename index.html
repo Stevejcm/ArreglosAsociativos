@@ -1,0 +1,184 @@
+<html>
+    <head>
+        <title>Arreglos Asociativos</title>
+        <link rel="stylesheet" href="Style.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <script>
+        function subir1(nombre, apellido, CI, salario, departamento, lugar) {
+            var trabajador1 = {
+                "nombre1" : nombre,
+                "apellido1" : apellido,
+                "CI1" : CI,
+                "salario1" :salario,
+                "departamento1" : departamento,
+                "lugar1" : lugar};
+            $.ajax({
+            url: "script.php",
+            type: "post",
+            data: trabajador1,
+            beforeSend: function() {
+            $("#resp").html("Procesando, espere por favor...");
+            },
+            fail: function() {
+            $("#resp").html("Error al agregar el trabajador");
+            },
+            success: function(response) {
+            $("#resp").html(response);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+            }
+            });
+            console.log(nombre, apellido, CI, salario, departamento, lugar);
+        }
+        function subir2(nombre, apellido, CI, salario, departamento, lugar) {
+            var trabajador2 = {
+                "nombre2" : nombre,
+                "apellido2" : apellido,
+                "CI2" : CI,
+                "salario2" :salario,
+                "departamento2" : departamento,
+                "lugar2" : lugar};
+            $.ajax({
+            url: "script2.php",
+            type: "post",
+            data: trabajador2,
+            beforeSend: function() {
+            $("#resp").html("Procesando, espere por favor...");
+            },
+            fail: function() {
+            $("#resp").html("Error al realizar el calculo");
+            },
+            success: function(response) {
+            $("#resp").html(response);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+            }
+            });
+            console.log(nombre, apellido, CI, salario, departamento, lugar);
+        }
+        function subir3(nombre, apellido, CI, salario, departamento, lugar) {
+            var trabajador3 = {
+                "nombre3" : nombre,
+                "apellido3" : apellido,
+                "CI3" : CI,
+                "salario3" :salario,
+                "departamento3" : departamento,
+                "lugar3" : lugar};
+            $.ajax({
+            url: "script3.php",
+            type: "post",
+            data: trabajador3,
+            beforeSend: function() {
+            $("#resp").html("Procesando, espere por favor...");
+            },
+            fail: function() {
+            $("#resp").html("Error al realizar el calculo");
+            },
+            success: function(response) {
+            $("#resp").html(response);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+            }
+            });
+            console.log(nombre1, apellido1, CI1, salario1, departamento1, lugar1);
+        }
+    </script>
+    <body>
+        <h1>INGRESAR TRABAJADORES</h1>
+        <br><br>
+        <div class="cuerpo">
+            <div class="caja">
+                <h2>1er Trabajador</h2>
+                <div>
+                    <h3><b>Nombre:</b></h3>
+                    <input type="text" name="nombre1" id="nombre1">
+                </div>
+                <div>
+                    <h3><b>Apellido:</b></h3>
+                    <input type="text" name="apellido1" id="apellido1">
+                </div>
+                <div>
+                    <h3><b>C.I:</b></h3>
+                    <input type="text" name="CI1" id="CI1">
+                </div>
+                <div>
+                    <h3><b>Salario:</b></h3>
+                    <input type="text" name="salario1" id="salario1">
+                </div>
+                <div>
+                    <h3><b>Departamento:</b></h3>
+                    <input type="text" name="departamento1" id="departamento1">
+                </div>
+                <div>
+                    <h3><b>Lugar de Trabajo:</b></h3>
+                    <input type="text" name="lugar1" id="lugar1">
+                </div>
+                <button onclick="subir1($('#nombre1').val(), $('#apellido1').val(), $('#CI1').val(), $('#salario1').val(), $('#departamento1').val(), $('#lugar1').val())" type="submit" name="action">Guardar</button>
+            </div>
+            <div class="caja">
+                <h2>2do Trabajador</h2>
+                <div>
+                    <h3><b>Nombre:</b></h3>
+                    <input type="text" name="nombre2" id="nombre2">
+                </div>
+                <div>
+                    <h3><b>Apellido:</b></h3>
+                    <input type="text" name="apellido2" id="apellido2">
+                </div>
+                <div>
+                    <h3><b>C.I:</b></h3>
+                    <input type="text" name="CI2" id="CI2">
+                </div>
+                <div>
+                    <h3><b>Salario:</b></h3>
+                    <input type="text" name="salario2" id="salario2">
+                </div>
+                <div>
+                    <h3><b>Departamento:</b></h3>
+                    <input type="text" name="departamento2" id="departamento2">
+                </div>
+                <div>
+                    <h3><b>Lugar de Trabajo:</b></h3>
+                    <input type="text" name="lugar2" id="lugar2">
+                </div>
+                <button onclick="subir2($('#nombre2').val(), $('#apellido2').val(), $('#CI2').val(), $('#salario2').val(), $('#departamento2').val(), $('#lugar2').val())" type="submit" name="action">Guardar</button>
+            </div>
+            <div class="caja">
+                <h2>3er Trabajador</h2>
+                <div>
+                    <h3><b>Nombre:</b></h3>
+                    <input type="text" name="nombre3" id="nombre3">
+                </div>
+                <div>
+                    <h3><b>Apellido:</b></h3>
+                    <input type="text" name="apellido3" id="apellido3">
+                </div>
+                <div>
+                    <h3><b>C.I:</b></h3>
+                    <input type="text" name="CI3" id="CI3">
+                </div>
+                <div>
+                    <h3><b>Salario:</b></h3>
+                    <input type="text" name="salario3" id="salario3">
+                </div>
+                <div>
+                    <h3><b>Departamento:</b></h3>
+                    <input type="text" name="departamento3" id="departamento3">
+                </div>
+                <div>
+                    <h3><b>Lugar de Trabajo:</b></h3>
+                    <input type="text" name="lugar3" id="lugar3">
+                </div>
+                <button onclick="subir3($('#nombre3').val(), $('#apellido3').val(), $('#CI3').val(), $('#salario3').val(), $('#departamento3').val(), $('#lugar3').val())" type="submit" name="action">Guardar</button>
+            </div>
+            <div>
+            </div>
+            <div id="resp" class="input-field col s6"></div>
+        </div>
+    </body>
+</html>
